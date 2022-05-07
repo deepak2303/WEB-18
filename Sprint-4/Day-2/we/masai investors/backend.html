@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend</title>
+    <link rel="stylesheet" href="../masai investors/common.css">
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="backend.html">Backend</a></div>
+        <div><a href="frontend.html">Frontend</a></div>
+    </div>
+    <form action="" id="form">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="URL" id="img">
+        <input type="text" placeholder="Logo" id="logo">
+        <input type="text" placeholder="Role" id="role">
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit",myForm);
+
+    var arr=JSON.parse(localStorage.getItem("backend"))||[];
+    function myForm(){
+        event.preventDefault();
+        var obj={
+            investorName:form.name.value,
+            investorUrl:form.img.value,
+            investorLogo:form.logo.value,
+            investorRole:form.role.value
+        }
+        arr.push(obj);
+        localStorage.setItem("backend",JSON.stringify(arr));
+        window.open("frontend.html")
+    }
+</script>

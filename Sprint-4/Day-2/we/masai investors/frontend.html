@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend</title>
+    <link rel="stylesheet" href="../masai investors/common.css">
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="backend.html">Backend</a></div>
+        <div><a href="frontend.html">Frontend</a></div>
+    </div>
+</body>
+</html>
+
+<script>
+    var Backend = JSON.parse(localStorage.getItem("backend"));
+
+    Backend.forEach(function(el){
+        var box = document.createElement("div");
+
+        var name = document.createElement("h3");
+        name.innerText=el.investorName
+
+        var img = document.createElement("img")
+        img.setAttribute("src",el.investorUrl);
+
+        var logo = document.createElement("img")
+        logo.setAttribute("src",el.investorLogo);
+
+        var role = document.createElement("p");
+        role.innerText=el.investorRole;
+
+        box.append(name,img,logo,role);
+        document.querySelector("body").append(box) ;
+    });
+</script>

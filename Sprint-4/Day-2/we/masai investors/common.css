@@ -1,0 +1,23 @@
+#navbar{
+    display: flex;
+    background-color: teal;
+    height: 50px;
+    justify-content: space-around;
+    font-size: 30px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#box{
+    display: flex;
+}
+
+img{
+    margin-right: 20px;
+    width: 200px;
+    height: 200px;
+}
