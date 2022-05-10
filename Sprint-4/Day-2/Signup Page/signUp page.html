@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        form{
+            width: 30%;
+            display: grid;
+            grid-template-columns: 300px;
+            gap: 10px;
+            margin: auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+        <span>Email</span>
+        <input type="text" id="email" placeholder="Email">
+        <span>Phone No.</span>
+        <input type="number" id="phone" placeholder="Phone No.">
+        <span>Password</span>
+        <input type="password" id="pass" placeholder="Password">
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    localStorage.clear()
+    var personData=document.querySelector("#form").addEventListener("submit",data);
+    var arr=JSON.parse(localStorage.getItem("data"))||[];
+    function data(){
+        event.preventDefault()
+        
+        var obj=
+        {
+            email:form.email.value,
+            phone:form.phone.value,
+            password:form.pass.value
+        };
+        // arr.push(obj);
+        localStorage.setItem("data",JSON.stringify(obj))
+        window.location.href="signUp page2.html"
+    }
+</script>
